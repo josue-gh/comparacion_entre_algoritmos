@@ -1,6 +1,8 @@
 #include<iostream> 
+#include <chrono>
 using namespace std;
-void interDirectoSenal(int a[], int n);
+
+void interDirectoSenal(int A[], int n);
 
 int main() {
     int n;
@@ -45,13 +47,22 @@ int main() {
 167, 3156, 1252, 7866, 948, 899, 5937, 5097, 5868, 4113};
     
 	n=sizeof(arr) / sizeof(arr[0]);
-     
-	
+    //tiempo de inicio
+	chrono::steady_clock::time_point begin = chrono::steady_clock::now();
     interDirectoSenal(arr, n);
-
+	//tiempo final
+	chrono::steady_clock::time_point end = chrono::steady_clock::now();
+	
+	//mostrar resultados
+	cout << "time difference = ";
+    cout << chrono::duration_cast<chrono::milliseconds>(end - begin).count() << " [ms]" << endl;
+    cout << chrono::duration_cast<chrono::microseconds>(end - begin).count() << " [µs]" << endl;
+    cout << chrono::duration_cast<chrono::nanoseconds>(end - begin).count() << " [ns]" << endl;
+    
     for(int i = 0; i < n; i++) {
     cout << "["<<arr[i]<<"]" << " ";
     }
+    
 }
 
 void interDirectoSenal(int A[], int n) {
