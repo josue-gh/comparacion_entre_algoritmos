@@ -119,7 +119,7 @@ int main(){
 	chrono::steady_clock::time_point end = chrono::steady_clock::now();
 	
 	//mostrar resultados
-	cout << "time difference = ";
+	cout << "time difference = "<<endl;
     cout << chrono::duration_cast<chrono::milliseconds>(end - begin).count() << " [ms]" << endl;
     cout << chrono::duration_cast<chrono::microseconds>(end - begin).count() << " [µs]" << endl;
     cout << chrono::duration_cast<chrono::nanoseconds>(end - begin).count() << " [ns]" << endl;
