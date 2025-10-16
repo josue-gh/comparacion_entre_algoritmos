@@ -56,8 +56,6 @@ int main() {
 	//mostrar resultados
 	cout << "time difference = "<<endl;
     cout << chrono::duration_cast<chrono::milliseconds>(end - begin).count() << " [ms]" << endl;
-    cout << chrono::duration_cast<chrono::microseconds>(end - begin).count() << " [µs]" << endl;
-    cout << chrono::duration_cast<chrono::nanoseconds>(end - begin).count() << " [ns]" << endl;
     
     for(int i = 0; i < n; i++) {
     cout << "["<<arr[i]<<"]" << " ";
